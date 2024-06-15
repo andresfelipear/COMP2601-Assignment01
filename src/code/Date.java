@@ -12,83 +12,86 @@ public class Date implements Comparable<Date>, Orderable
     int year;
 
     // CONSTANTS - DAYS OF THE WEEK
-    private static final int SATURDAY = 0;
-    private static final int SUNDAY = 1;
-    private static final int MONDAY = 2;
-    private static final int TUESDAY = 3;
+    private static final int SATURDAY  = 0;
+    private static final int SUNDAY    = 1;
+    private static final int MONDAY    = 2;
+    private static final int TUESDAY   = 3;
     private static final int WEDNESDAY = 4;
-    private static final int THURSDAY = 5;
-    private static final int FRIDAY = 6;
+    private static final int THURSDAY  = 5;
+    private static final int FRIDAY    = 6;
 
     // CONSTANTS - MONTHS
-    private static final int JANUARY = 1;
-    private static final int FEBRUARY = 2;
-    private static final int MARCH = 3;
-    private static final int APRIL = 4;
-    private static final int MAY = 5;
-    private static final int JUNE = 6;
-    private static final int JULY = 7;
-    private static final int AUGUST = 8;
-    private static final int SEPTEMBER = 9;
-    private static final int OCTOBER = 10;
-    private static final int NOVEMBER = 11;
-    private static final int DECEMBER = 12;
+    private static final int JANUARY            = 1;
+    private static final int FEBRUARY           = 2;
+    private static final int MARCH              = 3;
+    private static final int APRIL              = 4;
+    private static final int MAY                = 5;
+    private static final int JUNE               = 6;
+    private static final int JULY               = 7;
+    private static final int AUGUST             = 8;
+    private static final int SEPTEMBER          = 9;
+    private static final int OCTOBER            = 10;
+    private static final int NOVEMBER           = 11;
+    private static final int DECEMBER           = 12;
     private static final int DEFAULT_MONTH_CODE = -1;
 
     // CONSTANTS - YEARS
-    private static final int INITIAL_YEAR = 1;
+    private static final int INITIAL_YEAR    = 1;
     private static final int FIRST_DAY_MONTH = 1;
-    public static final int CURRENT_YEAR = 2024;
+    public static final int CURRENT_YEAR     = 2024;
 
     private static final int EXACT_DIVISION = 0;
 
     // CONSTANTS - MONTHS CODES
-    private static final int MONTH_CODE_JAN_OCT = 1;
+    private static final int MONTH_CODE_JAN_OCT       = 1;
     private static final int MONTH_CODE_FEB_MARCH_NOV = 4;
-    private static final int MONTH_CODE_APRIL_JULY = 0;
-    private static final int MONTH_CODE_MAY = 2;
-    private static final int MONTH_CODE_JUNE = 5;
-    private static final int MONTH_CODE_AUGUST = 3;
-    private static final int MONTH_CODE_SEP_DEC = 6;
+    private static final int MONTH_CODE_APRIL_JULY    = 0;
+    private static final int MONTH_CODE_MAY           = 2;
+    private static final int MONTH_CODE_JUNE          = 5;
+    private static final int MONTH_CODE_AUGUST        = 3;
+    private static final int MONTH_CODE_SEP_DEC       = 6;
 
     // CONSTANT - SPECIAL OFFSETS
-    private static final int OFFSET_LEAP_YEAR_JAN_OR_FEB = 6;
-    private static final int OFFSET_SIXTEEN_AND_TWENTIETH_CENTURY = 6;
+    private static final int OFFSET_LEAP_YEAR_JAN_OR_FEB                = 6;
+    private static final int OFFSET_SIXTEEN_AND_TWENTIETH_CENTURY       = 6;
     private static final int OFFSET_SEVENTEEN_AND_TWENTIETH_ONE_CENTURY = 4;
-    private static final int OFFSET_EIGHTEEN__CENTURY = 2;
-    private static final int DEFAULT_OFFSET = 0;
+    private static final int OFFSET_EIGHTEEN__CENTURY                   = 2;
+    private static final int DEFAULT_OFFSET                             = 0;
 
-    private static final int DAYS_OF_THE_WEEK = 7;
+    private static final int DAYS_OF_THE_WEEK   = 7;
     private static final int MONTHS_OF_THE_YEAR = 12;
-    private static final int FOUR_CENTURIES = 400;
-    private static final int CENTURIES = 100;
+    private static final int FOUR_CENTURIES     = 400;
+    private static final int CENTURIES          = 100;
 
     // CONSTANTS - CENTURIES
-    private static final int START_SIXTEEN_CENTURY = 1600;
-    private static final int END_SIXTEEN_CENTURY = 1699;
-    private static final int START_SEVENTEEN_CENTURY = 1700;
-    private static final int END_SEVENTEEN_CENTURY = 1799;
-    private static final int START_EIGHTEEN_CENTURY = 1800;
-    private static final int END_EIGHTEEN_CENTURY = 1899;
-    private static final int START_TWENTIETH_CENTURY = 2000;
-    private static final int END_TWENTIETH_CENTURY = 2099;
+    private static final int START_SIXTEEN_CENTURY    = 1600;
+    private static final int END_SIXTEEN_CENTURY      = 1699;
+    private static final int START_SEVENTEEN_CENTURY  = 1700;
+    private static final int END_SEVENTEEN_CENTURY    = 1799;
+    private static final int START_EIGHTEEN_CENTURY   = 1800;
+    private static final int END_EIGHTEEN_CENTURY     = 1899;
+    private static final int START_TWENTIETH_CENTURY  = 2000;
+    private static final int END_TWENTIETH_CENTURY    = 2099;
     private static final int START_TWENTY_ONE_CENTURY = 2100;
-    private static final int END_TWENTY_ONE_CENTURY = 2199;
+    private static final int END_TWENTY_ONE_CENTURY   = 2199;
 
     private static final int NUMBER_OF_DAYS_FEBRUARY_LEAP_YEAR = 29;
-    private static final int NUMBER_OF_DAYS_FEBRUARY_REGULAR = 28;
-    private static final int NUMBER_OF_DAYS_APRIL_JUN_SEP_NOV = 30;
-    private static final int NUMBER_OF_DAYS_OTHER_MONTHS = 31;
+    private static final int NUMBER_OF_DAYS_FEBRUARY_REGULAR   = 28;
+    private static final int NUMBER_OF_DAYS_APRIL_JUN_SEP_NOV  = 30;
+    private static final int NUMBER_OF_DAYS_OTHER_MONTHS       = 31;
 
-    private static final int HUNDREDS_DIGITS = 100;
+    private static final int HUNDREDS_DIGITS     = 100;
     private static final int FRECUENCY_LEAP_YEAR = 4;
-    private static final int STEP3_DIVISION = 4;
+    private static final int STEP3_DIVISION      = 4;
 
-    public static void main(String[] args)
-    {
-        Date d3 = new Date(1, 0, 1);
-    }
-
+    /**
+     * Constructs a new Date object with the specified day, month, and year.
+     *
+     * @param day the day of the month
+     * @param month the month of the year
+     * @param year the year
+     * @throws IllegalArgumentException if the day, month, or year is invalid
+     */
     public Date(final int day,
                 final int month,
                 final int year)
@@ -102,6 +105,14 @@ public class Date implements Comparable<Date>, Orderable
         this.year = year;
     }
 
+    /**
+     * Validates the day of the month.
+     *
+     * @param day the day to validate
+     * @param month the month of the year
+     * @param year the year
+     * @throws IllegalArgumentException if the day is invalid for the given month and year
+     */
     private static void validateDay(final int day, final int month, final int year)
     {
         final int numberOfDaysInMonth;
@@ -114,6 +125,13 @@ public class Date implements Comparable<Date>, Orderable
 
     }
 
+    /**
+     * Returns the number of days in the specified month and year.
+     *
+     * @param month the month
+     * @param year the year
+     * @return the number of days in the specified month and year
+     */
     private static int getNumberOfDaysPerMonth(final int month, final int year)
     {
         if(month == FEBRUARY)
@@ -137,6 +155,12 @@ public class Date implements Comparable<Date>, Orderable
         }
     }
 
+    /**
+     * Validates the month of the year.
+     *
+     * @param month the month to validate
+     * @throws IllegalArgumentException if the month is not between JANUARY and DECEMBER
+     */
     private static void validateMonth(final int month)
     {
         if(month < JANUARY || month > DECEMBER)
@@ -145,6 +169,12 @@ public class Date implements Comparable<Date>, Orderable
         }
     }
 
+    /**
+     * Validates the year.
+     *
+     * @param year the year to validate
+     * @throws IllegalArgumentException if the year is not between the INITIAL_YEAR and the CURRENT_YEAR
+     */
     private static void validateYear(final int year)
     {
         if(year < INITIAL_YEAR || year > CURRENT_YEAR)
@@ -355,28 +385,38 @@ public class Date implements Comparable<Date>, Orderable
     {
         return switch(getMonth())
         {
-            case JANUARY -> "January";
-            case FEBRUARY -> "February";
-            case MARCH -> "March";
-            case APRIL -> "April";
-            case MAY -> "May";
-            case JUNE -> "June";
-            case JULY -> "July";
-            case AUGUST -> "August";
-            case SEPTEMBER -> "September";
-            case OCTOBER -> "October";
-            case NOVEMBER -> "November";
-            case DECEMBER -> "December";
-            default -> "Invalid day";
+            case JANUARY    -> "January";
+            case FEBRUARY   -> "February";
+            case MARCH      -> "March";
+            case APRIL      -> "April";
+            case MAY        -> "May";
+            case JUNE       -> "June";
+            case JULY       -> "July";
+            case AUGUST     -> "August";
+            case SEPTEMBER  -> "September";
+            case OCTOBER    -> "October";
+            case NOVEMBER   -> "November";
+            case DECEMBER   -> "December";
+            default         -> "Invalid day";
         };
     }
 
+    /**
+     * Returns the date in YYYY-MM-DD format.
+     *
+     * @return the date as a string in YYYY-MM-DD format
+     */
     @Override
     public String toString()
     {
         return getYyyyMmDd();
     }
 
+    /**
+     * Returns the previous date.
+     *
+     * @return a new Date object representing the previous date
+     */
     @Override
     public Date previous()
     {
@@ -388,6 +428,11 @@ public class Date implements Comparable<Date>, Orderable
         return previusDate;
     }
 
+    /**
+     * Returns the next date.
+     *
+     * @return a new Date object representing the next date
+     */
     @Override
     public Date next()
     {
@@ -399,11 +444,17 @@ public class Date implements Comparable<Date>, Orderable
         return nextDate;
     }
 
+    /**
+     * Decreases the year by one.
+     */
     public void decreesYear()
     {
         year--;
     }
 
+    /**
+     * Decreases the month by one, adjusting the year if necessary.
+     */
     public void decreesMonth()
     {
         if(month == JANUARY)
@@ -417,6 +468,9 @@ public class Date implements Comparable<Date>, Orderable
         }
     }
 
+    /**
+     * Decreases the day by one, adjusting the month and year if necessary.
+     */
     public void decreesDay()
     {
         if(day == FIRST_DAY_MONTH)
@@ -430,11 +484,17 @@ public class Date implements Comparable<Date>, Orderable
         }
     }
 
+    /**
+     * Increases the year by one.
+     */
     public void incrementYear()
     {
         year++;
     }
 
+    /**
+     * Increases the month by one, adjusting the year if necessary.
+     */
     public void incrementMonth()
     {
         if(month == DECEMBER)
@@ -448,6 +508,9 @@ public class Date implements Comparable<Date>, Orderable
         }
     }
 
+    /**
+     * Increases the day by one, adjusting the month and year if necessary.
+     */
     public void incrementDay()
     {
         if(day == getNumberOfDaysPerMonth(month, year))
@@ -461,6 +524,12 @@ public class Date implements Comparable<Date>, Orderable
         }
     }
 
+    /**
+     * Compares this date with another date.
+     *
+     * @param that the other date to compare to
+     * @return a negative integer, zero, or a positive integer if this date is less than, equal to, or greater than the specified date
+     */
     @Override
     public int compareTo(final Date that)
     {

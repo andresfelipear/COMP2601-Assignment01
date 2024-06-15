@@ -18,6 +18,14 @@ public class Name
         TO_LOWER_CASE = 1;
 
     }
+
+    /**
+     * Constructs a new Name object with the specified first and last names.
+     *
+     * @param first the first name
+     * @param last the last name
+     * @throws IllegalArgumentException if the first or last name is null or blank
+     */
     public Name(final String first,
                 final String last)
     {
@@ -27,6 +35,12 @@ public class Name
         this.last = last;
     }
 
+    /**
+     * Validates the last name.
+     *
+     * @param last the last name to validate
+     * @throws IllegalArgumentException if the last name is null or blank
+     */
     private static void validateLast(final String last)
     {
         if(last == null || last.isBlank())
@@ -35,6 +49,12 @@ public class Name
         }
     }
 
+    /**
+     * Validates the first name.
+     *
+     * @param first the first name to validate
+     * @throws IllegalArgumentException if the first name is null or blank
+     */
     private static void validateFirst(final String first)
     {
         if(first == null || first.isBlank())
@@ -44,6 +64,11 @@ public class Name
 
     }
 
+    /**
+     * Returns the name in a pretty format, with the first letter of each name capitalized.
+     *
+     * @return the name in a pretty format
+     */
     public String getPrettyName()
     {
         final String firstTitleCase = first.toUpperCase().charAt(INITIAL) + first.substring(TO_LOWER_CASE).toLowerCase();
@@ -51,6 +76,11 @@ public class Name
         return firstTitleCase + " " + lastTitleCase;
     }
 
+    /**
+     * Returns the initials of the first and last names.
+     *
+     * @return the initials of the first and last names
+     */
     public String getInitials()
     {
         final String firstInitial;
