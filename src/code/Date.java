@@ -7,9 +7,9 @@
 public class Date implements Comparable<Date>, Orderable
 {
 
-    int day;
-    int month;
-    int year;
+    private int day;
+    private int month;
+    private int year;
 
     // CONSTANTS - DAYS OF THE WEEK
     private static final int SATURDAY  = 0;
@@ -38,7 +38,7 @@ public class Date implements Comparable<Date>, Orderable
     // CONSTANTS - YEARS
     private static final int INITIAL_YEAR    = 1;
     private static final int FIRST_DAY_MONTH = 1;
-    public static final int CURRENT_YEAR     = 2024;
+    public static final int CURRENT_YEAR     = 2022;
 
     private static final int EXACT_DIVISION = 0;
 
@@ -83,6 +83,12 @@ public class Date implements Comparable<Date>, Orderable
     private static final int HUNDREDS_DIGITS     = 100;
     private static final int FRECUENCY_LEAP_YEAR = 4;
     private static final int STEP3_DIVISION      = 4;
+
+    public static void main(String[] args)
+    {
+        Date d4 = new Date(29, 2, 2023);
+
+    }
 
     /**
      * Constructs a new Date object with the specified day, month, and year.
@@ -177,7 +183,7 @@ public class Date implements Comparable<Date>, Orderable
      */
     private static void validateYear(final int year)
     {
-        if(year < INITIAL_YEAR || year > CURRENT_YEAR)
+        if(year < INITIAL_YEAR)
         {
             throw new IllegalArgumentException("invalid year");
         }
