@@ -13,7 +13,12 @@ public class Person implements Comparable<Person>
     private final Date born;
     private final Name name;
 
-    private static final int POSITIVE_NUMBER = 0;
+    private static final int POSITIVE_NUMBER;
+
+    static
+    {
+        POSITIVE_NUMBER = 0;
+    }
 
     Date died;
     {

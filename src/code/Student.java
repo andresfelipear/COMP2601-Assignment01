@@ -8,7 +8,12 @@ public class Student extends Person
 {
     private final String studentNumber;
 
-    private static final int STUDENT_NUMBER_LENGTH = 9;
+    private static final int STUDENT_NUMBER_LENGTH;
+
+    static
+    {
+        STUDENT_NUMBER_LENGTH = 9;
+    }
 
     /**
      * Constructs a new Student object with the specified date of birth, name, and student number.

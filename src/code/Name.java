@@ -16,7 +16,6 @@ public class Name
     {
         INITIAL = 0;
         TO_LOWER_CASE = 1;
-
     }
 
     /**
@@ -31,8 +30,8 @@ public class Name
     {
         validateFirst(first);
         validateLast(last);
-        this.first = first;
-        this.last = last;
+        this.first  = first;
+        this.last   = last;
     }
 
     /**

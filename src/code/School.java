@@ -12,7 +12,12 @@ import java.util.List;
 public class School
 {
     private final List<Person> references;
-    private static final String FILE_NAME = "people.txt";
+    private static final String FILE_NAME;
+
+    static
+    {
+       FILE_NAME = "people.txt";
+    }
 
     {
         references = new ArrayList<Person>();

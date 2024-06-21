@@ -12,82 +12,152 @@ public class Date implements Comparable<Date>, Orderable
     private int year;
 
     // CONSTANTS - DAYS OF THE WEEK
-    private static final int SATURDAY  = 0;
-    private static final int SUNDAY    = 1;
-    private static final int MONDAY    = 2;
-    private static final int TUESDAY   = 3;
-    private static final int WEDNESDAY = 4;
-    private static final int THURSDAY  = 5;
-    private static final int FRIDAY    = 6;
+    private static final int SATURDAY;
+    private static final int SUNDAY;
+    private static final int MONDAY;
+    private static final int TUESDAY;
+    private static final int WEDNESDAY;
+    private static final int THURSDAY;
+    private static final int FRIDAY;
 
     // CONSTANTS - MONTHS
-    private static final int JANUARY            = 1;
-    private static final int FEBRUARY           = 2;
-    private static final int MARCH              = 3;
-    private static final int APRIL              = 4;
-    private static final int MAY                = 5;
-    private static final int JUNE               = 6;
-    private static final int JULY               = 7;
-    private static final int AUGUST             = 8;
-    private static final int SEPTEMBER          = 9;
-    private static final int OCTOBER            = 10;
-    private static final int NOVEMBER           = 11;
-    private static final int DECEMBER           = 12;
-    private static final int DEFAULT_MONTH_CODE = -1;
+    private static final int JANUARY;
+    private static final int FEBRUARY;
+    private static final int MARCH;
+    private static final int APRIL;
+    private static final int MAY;
+    private static final int JUNE;
+    private static final int JULY;
+    private static final int AUGUST;
+    private static final int SEPTEMBER;
+    private static final int OCTOBER;
+    private static final int NOVEMBER;
+    private static final int DECEMBER;
+    private static final int DEFAULT_MONTH_CODE;
 
     // CONSTANTS - YEARS
-    private static final int INITIAL_YEAR    = 1;
-    private static final int FIRST_DAY_MONTH = 1;
-    public static final int CURRENT_YEAR     = 2022;
+    private static final int INITIAL_YEAR;
+    private static final int FIRST_DAY_MONTH;
+    public static final int CURRENT_YEAR;
 
-    private static final int EXACT_DIVISION = 0;
+    private static final int EXACT_DIVISION;
 
     // CONSTANTS - MONTHS CODES
-    private static final int MONTH_CODE_JAN_OCT       = 1;
-    private static final int MONTH_CODE_FEB_MARCH_NOV = 4;
-    private static final int MONTH_CODE_APRIL_JULY    = 0;
-    private static final int MONTH_CODE_MAY           = 2;
-    private static final int MONTH_CODE_JUNE          = 5;
-    private static final int MONTH_CODE_AUGUST        = 3;
-    private static final int MONTH_CODE_SEP_DEC       = 6;
+    private static final int MONTH_CODE_JAN_OCT;
+    private static final int MONTH_CODE_FEB_MARCH_NOV;
+    private static final int MONTH_CODE_APRIL_JULY;
+    private static final int MONTH_CODE_MAY;
+    private static final int MONTH_CODE_JUNE;
+    private static final int MONTH_CODE_AUGUST;
+    private static final int MONTH_CODE_SEP_DEC;
 
     // CONSTANT - SPECIAL OFFSETS
-    private static final int OFFSET_LEAP_YEAR_JAN_OR_FEB                = 6;
-    private static final int OFFSET_SIXTEEN_AND_TWENTIETH_CENTURY       = 6;
-    private static final int OFFSET_SEVENTEEN_AND_TWENTIETH_ONE_CENTURY = 4;
-    private static final int OFFSET_EIGHTEEN__CENTURY                   = 2;
-    private static final int DEFAULT_OFFSET                             = 0;
+    private static final int OFFSET_LEAP_YEAR_JAN_OR_FEB;
+    private static final int OFFSET_SIXTEEN_AND_TWENTIETH_CENTURY;
+    private static final int OFFSET_SEVENTEEN_AND_TWENTIETH_ONE_CENTURY;
+    private static final int OFFSET_EIGHTEEN__CENTURY;
+    private static final int DEFAULT_OFFSET;
 
-    private static final int DAYS_OF_THE_WEEK   = 7;
-    private static final int MONTHS_OF_THE_YEAR = 12;
-    private static final int FOUR_CENTURIES     = 400;
-    private static final int CENTURIES          = 100;
+    private static final int DAYS_OF_THE_WEEK;
+    private static final int MONTHS_OF_THE_YEAR;
+    private static final int FOUR_CENTURIES;
+    private static final int CENTURIES;
 
     // CONSTANTS - CENTURIES
-    private static final int START_SIXTEEN_CENTURY    = 1600;
-    private static final int END_SIXTEEN_CENTURY      = 1699;
-    private static final int START_SEVENTEEN_CENTURY  = 1700;
-    private static final int END_SEVENTEEN_CENTURY    = 1799;
-    private static final int START_EIGHTEEN_CENTURY   = 1800;
-    private static final int END_EIGHTEEN_CENTURY     = 1899;
-    private static final int START_TWENTIETH_CENTURY  = 2000;
-    private static final int END_TWENTIETH_CENTURY    = 2099;
-    private static final int START_TWENTY_ONE_CENTURY = 2100;
-    private static final int END_TWENTY_ONE_CENTURY   = 2199;
+    private static final int START_SIXTEEN_CENTURY;
+    private static final int END_SIXTEEN_CENTURY;
+    private static final int START_SEVENTEEN_CENTURY;
+    private static final int END_SEVENTEEN_CENTURY;
+    private static final int START_EIGHTEEN_CENTURY;
+    private static final int END_EIGHTEEN_CENTURY;
+    private static final int START_TWENTIETH_CENTURY;
+    private static final int END_TWENTIETH_CENTURY;
+    private static final int START_TWENTY_ONE_CENTURY;
+    private static final int END_TWENTY_ONE_CENTURY;
 
-    private static final int NUMBER_OF_DAYS_FEBRUARY_LEAP_YEAR = 29;
-    private static final int NUMBER_OF_DAYS_FEBRUARY_REGULAR   = 28;
-    private static final int NUMBER_OF_DAYS_APRIL_JUN_SEP_NOV  = 30;
-    private static final int NUMBER_OF_DAYS_OTHER_MONTHS       = 31;
+    private static final int NUMBER_OF_DAYS_FEBRUARY_LEAP_YEAR;
+    private static final int NUMBER_OF_DAYS_FEBRUARY_REGULAR;
+    private static final int NUMBER_OF_DAYS_APRIL_JUN_SEP_NOV;
+    private static final int NUMBER_OF_DAYS_OTHER_MONTHS;
 
-    private static final int HUNDREDS_DIGITS     = 100;
-    private static final int FRECUENCY_LEAP_YEAR = 4;
-    private static final int STEP3_DIVISION      = 4;
+    private static final int HUNDREDS_DIGITS;
+    private static final int FRECUENCY_LEAP_YEAR;
+    private static final int STEP3_DIVISION;
 
-    public static void main(String[] args)
+    static
     {
-        Date d4 = new Date(29, 2, 2023);
+        // DAYS OF THE WEEK
+        SATURDAY  = 0;
+        SUNDAY    = 1;
+        MONDAY    = 2;
+        TUESDAY   = 3;
+        WEDNESDAY = 4;
+        THURSDAY  = 5;
+        FRIDAY    = 6;
 
+        // MONTHS
+        JANUARY            = 1;
+        FEBRUARY           = 2;
+        MARCH              = 3;
+        APRIL              = 4;
+        MAY                = 5;
+        JUNE               = 6;
+        JULY               = 7;
+        AUGUST             = 8;
+        SEPTEMBER          = 9;
+        OCTOBER            = 10;
+        NOVEMBER           = 11;
+        DECEMBER           = 12;
+        DEFAULT_MONTH_CODE = -1;
+
+        // YEARS
+        INITIAL_YEAR    = 1;
+        FIRST_DAY_MONTH = 1;
+        CURRENT_YEAR     = 2022;
+
+        // MONTHS CODES
+        MONTH_CODE_JAN_OCT       = 1;
+        MONTH_CODE_FEB_MARCH_NOV = 4;
+        MONTH_CODE_APRIL_JULY    = 0;
+        MONTH_CODE_MAY           = 2;
+        MONTH_CODE_JUNE          = 5;
+        MONTH_CODE_AUGUST        = 3;
+        MONTH_CODE_SEP_DEC       = 6;
+
+        // SPECIAL OFFSETS
+        OFFSET_LEAP_YEAR_JAN_OR_FEB                = 6;
+        OFFSET_SIXTEEN_AND_TWENTIETH_CENTURY       = 6;
+        OFFSET_SEVENTEEN_AND_TWENTIETH_ONE_CENTURY = 4;
+        OFFSET_EIGHTEEN__CENTURY                   = 2;
+        DEFAULT_OFFSET                             = 0;
+
+        DAYS_OF_THE_WEEK   = 7;
+        MONTHS_OF_THE_YEAR = 12;
+        FOUR_CENTURIES     = 400;
+        CENTURIES          = 100;
+
+        // CENTURIES
+        START_SIXTEEN_CENTURY    = 1600;
+        END_SIXTEEN_CENTURY      = 1699;
+        START_SEVENTEEN_CENTURY  = 1700;
+        END_SEVENTEEN_CENTURY    = 1799;
+        START_EIGHTEEN_CENTURY   = 1800;
+        END_EIGHTEEN_CENTURY     = 1899;
+        START_TWENTIETH_CENTURY  = 2000;
+        END_TWENTIETH_CENTURY    = 2099;
+        START_TWENTY_ONE_CENTURY = 2100;
+        END_TWENTY_ONE_CENTURY   = 2199;
+
+        // MONTH DAYS
+        NUMBER_OF_DAYS_FEBRUARY_LEAP_YEAR = 29;
+        NUMBER_OF_DAYS_FEBRUARY_REGULAR   = 28;
+        NUMBER_OF_DAYS_APRIL_JUN_SEP_NOV  = 30;
+        NUMBER_OF_DAYS_OTHER_MONTHS       = 31;
+
+        HUNDREDS_DIGITS     = 100;
+        FRECUENCY_LEAP_YEAR = 4;
+        STEP3_DIVISION      = 4;
+        EXACT_DIVISION      = 0;
     }
 
     /**
@@ -297,17 +367,38 @@ public class Date implements Comparable<Date>, Orderable
      */
     public static int getMonthCode(int month)
     {
-        return switch(month)
+        if(month == JANUARY || month == OCTOBER)
         {
-            case JANUARY, OCTOBER -> MONTH_CODE_JAN_OCT;
-            case FEBRUARY, MARCH, NOVEMBER -> MONTH_CODE_FEB_MARCH_NOV;
-            case APRIL, JULY -> MONTH_CODE_APRIL_JULY;
-            case MAY -> MONTH_CODE_MAY;
-            case JUNE -> MONTH_CODE_JUNE;
-            case AUGUST -> MONTH_CODE_AUGUST;
-            case SEPTEMBER, DECEMBER -> MONTH_CODE_SEP_DEC;
-            default -> DEFAULT_MONTH_CODE; // Invalid month
-        };
+            return MONTH_CODE_JAN_OCT;
+        }
+        else if(month == FEBRUARY || month == MARCH || month == NOVEMBER)
+        {
+            return MONTH_CODE_FEB_MARCH_NOV;
+        }
+        else if(month == APRIL || month == JULY)
+        {
+            return MONTH_CODE_APRIL_JULY;
+        }
+        else if(month == MAY)
+        {
+            return MONTH_CODE_MAY;
+        }
+        else if(month == JUNE)
+        {
+            return MONTH_CODE_JUNE;
+        }
+        else if(month == AUGUST)
+        {
+            return MONTH_CODE_AUGUST;
+        }
+        else if(month == SEPTEMBER || month == DECEMBER)
+        {
+            return MONTH_CODE_SEP_DEC;
+        }
+        else
+        {
+            return DEFAULT_MONTH_CODE; // Invalid month
+        }
     }
 
     /**
@@ -352,17 +443,38 @@ public class Date implements Comparable<Date>, Orderable
      */
     public static String dayOfWeek(int step6)
     {
-        return switch(step6)
+        if(step6 == SATURDAY)
         {
-            case SATURDAY -> "Saturday";
-            case SUNDAY -> "Sunday";
-            case MONDAY -> "Monday";
-            case TUESDAY -> "Tuesday";
-            case WEDNESDAY -> "Wednesday";
-            case THURSDAY -> "Thursday";
-            case FRIDAY -> "Friday";
-            default -> "Invalid day";
-        };
+            return "Saturday";
+        }
+        else if(step6 == SUNDAY)
+        {
+            return "Sunday";
+        }
+        else if(step6 == MONDAY)
+        {
+            return "Monday";
+        }
+        else if(step6 == TUESDAY)
+        {
+            return "Tuesday";
+        }
+        else if(step6 == WEDNESDAY)
+        {
+            return "Wednesday";
+        }
+        else if(step6 == THURSDAY)
+        {
+            return "Thursday";
+        }
+        else if(step6 == FRIDAY)
+        {
+            return "Friday";
+        }
+        else
+        {
+            return "Invalid day";
+        }
     }
 
     /**
@@ -389,22 +501,61 @@ public class Date implements Comparable<Date>, Orderable
      */
     private String getFullMonth()
     {
-        return switch(getMonth())
+        final int month;
+        month = getMonth();
+
+        if(month == JANUARY)
         {
-            case JANUARY    -> "January";
-            case FEBRUARY   -> "February";
-            case MARCH      -> "March";
-            case APRIL      -> "April";
-            case MAY        -> "May";
-            case JUNE       -> "June";
-            case JULY       -> "July";
-            case AUGUST     -> "August";
-            case SEPTEMBER  -> "September";
-            case OCTOBER    -> "October";
-            case NOVEMBER   -> "November";
-            case DECEMBER   -> "December";
-            default         -> "Invalid day";
-        };
+            return "January";
+        }
+        else if(month == FEBRUARY)
+        {
+            return "February";
+        }
+        else if(month == MARCH)
+        {
+            return "March";
+        }
+        else if(month == APRIL)
+        {
+            return "April";
+        }
+        else if(month == MAY)
+        {
+            return "May";
+        }
+        else if(month == JUNE)
+        {
+            return "June";
+        }
+        else if(month == JULY)
+        {
+            return "July";
+        }
+        else if(month == AUGUST)
+        {
+            return "August";
+        }
+        else if(month == SEPTEMBER)
+        {
+            return "September";
+        }
+        else if(month == OCTOBER)
+        {
+            return "October";
+        }
+        else if(month == NOVEMBER)
+        {
+            return "November";
+        }
+        else if(month == DECEMBER)
+        {
+            return "December";
+        }
+        else
+        {
+            return "Invalid month";
+        }
     }
 
     /**
