@@ -4,9 +4,9 @@
  * @author Andres Arevalo
  * @version 1.0
  */
-public interface Orderable
+interface Orderable
 {
-    public Orderable next();
+    Orderable next();
 
-    public Orderable previous();
+    Orderable previous();
 }

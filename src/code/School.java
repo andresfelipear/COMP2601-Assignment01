@@ -20,7 +20,7 @@ public class School
     }
 
     {
-        references = new ArrayList<Person>();
+        references = new ArrayList<>();
     }
 
     /**
@@ -120,7 +120,7 @@ public class School
         }
         catch(IOException e)
         {
-            e.printStackTrace();
+            System.out.println("Error writing file " + e.getMessage());
         }
         finally
         {
@@ -133,7 +133,7 @@ public class School
             }
             catch(IOException e)
             {
-                e.printStackTrace();
+                System.out.println("Error closing file " + e.getMessage());
             }
         }
     }
